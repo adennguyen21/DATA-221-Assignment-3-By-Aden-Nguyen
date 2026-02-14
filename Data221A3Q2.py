@@ -13,12 +13,14 @@ def convert_csv_as_dataframe(crime_file):
 
 
 def convert_column_as_list(dataframe, column_name):
+    # Converts the chosen column as a list of values.
     column_list = list(dataframe[column_name])
 
     return column_list
 
 
 def create_histogram(column_list):
+    # Creates a histogram based on the column that was turned into a list.
     plt.hist(column_list, bins=30, color="purple", edgecolor="black")
     plt.title("Distribution of Violent Crimes Per Population")
     plt.xlabel("ViolentCrimesPerPop")
@@ -27,6 +29,7 @@ def create_histogram(column_list):
 
 
 def create_boxplot(column_list):
+    # Creates a boxplot based on the column that was turned into a list.
     plt.boxplot(column_list)
     plt.title("Box Plot of Violent Crimes Per Population")
     plt.ylabel("ViolentCrimesPerPop")
