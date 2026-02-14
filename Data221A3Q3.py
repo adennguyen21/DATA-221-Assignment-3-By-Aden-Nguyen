@@ -43,3 +43,15 @@ def main():
     split_dataset(kidney_matrix_x, kidney_vector_y)
 
 main()
+
+# =============================================================
+# Explanation:
+
+'''We should not train and test a model on the same data because the model could simply
+memorize the training examples, and end up giving an unrealistically high performance
+score (Overfitting). Testing on the same data used for training does not measure how 
+well a model handles new data, as it is basically memorizing the training data. The
+purpose of the testing set is to evaluate the model's performance after it has been
+trained, with new data it hasn't see before. This helps to see how well the model will
+preform in real-world situations, and also prevents overfitting as we're testing it 
+with completely new data.'''
