@@ -4,6 +4,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 def convert_csv_as_dataframe(crime_file):
     # Converts the crime csv as a dataframe.
     crime_dataframe = pd.read_csv(crime_file)
@@ -23,6 +24,7 @@ def create_histogram(column_list):
     plt.xlabel("ViolentCrimesPerPop")
     plt.ylabel("Frequency")
     plt.show()
+
 
 def create_boxplot(column_list):
     plt.boxplot(column_list)
@@ -46,5 +48,12 @@ def main():
 
 main()
 
-#====================================================
-# Questions:
+#==================================================================================
+# Explanation:
+
+'''The histogram shows how the values of the "ViolentCrimesPerPop" column are spread across the csv file.
+It reveals the distribution of crime for most cities, with this dataset showing more values clustered around
+the lower and middle crime ranges, and less in the higher crime ranges (except for the value 1). The box plot
+displays the median as a orange line around the middle of the box plot. This allows us to easily compare the 
+median to the rest of the distribution. The box plot also shows the presence of potential outliers, displayed 
+as one upper dot and one lower dot. These could be outlier cities with unusually high or low crime rates.'''
