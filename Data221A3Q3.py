@@ -13,18 +13,21 @@ def convert_csv_as_dataframe(kidney_file):
 
 
 def create_matrix_x(kidney_dataframe):
+    # Creates a matrix that contains all the columns except the "classification" column.
     kidney_matrix_x = kidney_dataframe.drop(columns=["classification"])
 
     return kidney_matrix_x
 
 
 def create_vector_y(kidney_dataframe):
+    # Creates a vector based on the column "classification".
     kidney_vector_y = kidney_dataframe["classification"]
 
     return kidney_vector_y
 
 
 def split_dataset(matrix_x, vector_y):
+    # Splits the dataset into training and testing data.
     kidney_x_train, kidney_x_test, kidney_y_train, kidney_y_test = train_test_split(matrix_x, vector_y, test_size = 0.30, random_state = 42)
 
     return kidney_x_train, kidney_x_test, kidney_y_train, kidney_y_test
